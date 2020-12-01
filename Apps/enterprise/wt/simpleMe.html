@@ -1,0 +1,104 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>Bootstrap Theme Company Page</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!--<link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">-->
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.5.0/css/all.css" integrity="sha384-B4dIYHKNBt8Bc12p+WXckhzcICo0wtJAoU8YZTY5qE0Id1GSseTk6S+L3BlXeVIU" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  
+  <style>
+   
+
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60">
+
+
+  <div class="container">
+   <button id="btnEmail" class="btn btn-info">Email testing</button>
+  </div>
+
+
+
+<script>
+    $(document).ready(function () {
+    // Add smooth scrolling to all links in navbar + footer link
+        $("#btnEmail").on('click', function (event) {
+            $.ajax({
+                type: "POST",
+                url: "../../mcpservices/SvOrder.asmx/send_twodays_confirm_mail",
+                contentType: "application/json; charset=utf-8",
+                dataType: "json",
+                data: JSON.stringify({ "orderid": "M2080223002", "sentto": "customer" }),
+                cache: false,
+                asyn: false,
+                success: function (response) {
+                    console.log(response);
+                },
+                error: function (xhr, textStatus, thrownError) {
+                    console.log(xhr.status);
+                    console.log(xhr.responseText);
+                    console.log(thrownError);                 
+                }
+            });
+        });
+
+  });
+
+  function load_acts() {
+    aryOne = [];
+    aryTwo = [];
+    var def = $.ajax({
+      type: "POST",
+      url: "../../mcpservices/SvAct.asmx/get_All_Act_Details",
+      contentType: "application/json; charset=utf-8",
+      dataType: "json",
+      data: JSON.stringify({ "filtervalue": "E" }),
+      cache: false,
+      asyn: false,
+      success: function (response) {
+        if (response.hasOwnProperty('d')) {
+          var json = JSON.parse(response.d);
+          var totalrows = json.TotalRows;
+          var objAct = json.Acts;
+          if (objAct != null) {
+            $.each(objAct, function (i, v) {
+              if (v.ActID.substring(0, 2) == 'E1')
+                aryOne.push(v);
+              if (v.ActID.substring(0, 2) == 'E2')
+                aryTwo.push(v);
+            });
+          }
+        } else {
+         // $("#tblBody").append("<tr><td colspan='5'>目前尚無活動</td></tr>");
+        }
+        //loading.hide();
+      },
+      error: function (xhr, textStatus, thrownError) {
+        console.log(xhr.status);
+        console.log(xhr.responseText);
+        console.log(thrownError);
+        $("#tblBody").html('');
+        $("#tblBody").append("<tr><td colspan='5'>目前尚無活動</td></tr>");
+      }
+    });
+
+    def.done(function () {
+      //console.log(aryOne);
+      //console.log(aryTwo);
+      
+      generate_act_block();
+    });
+  }
+
+
+</script>
+
+</body>
+</html>

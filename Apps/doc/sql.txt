@@ -1,0 +1,231 @@
+﻿
+
+http://enterprise.mcpgo.com/backend/order/waiting_edit_wt.aspx
+
+--UPDATE enterprise_Act SET FieldInt1=23, FieldInt2=6 WHERE ActID LIKE 'E1060718%' AND Capacity =80;
+--UPDATE enterprise_Act SET FieldInt1=11, FieldInt2=3 WHERE ActID LIKE 'E1060718%' AND Capacity =40;
+
+update [enterprise_Act] set Name ='【新竹】與長頸鹿有約（正常版）', RegExpDay='2019-02-05 00:00:00', Capacity=40, FieldInt1=0, FieldInt2=0 where ActID='E1070510019';
+update [enterprise_Act] set Name ='【新竹】與長頸鹿有約（名額不足版）', RegExpDay='2019-02-05 00:00:00', Capacity=1, FieldInt1=0, FieldInt2=0 where ActID='E1070510020';
+update [enterprise_Act] set Name ='【新竹】與長頸鹿有約（無名額版）', RegExpDay='2019-02-05 00:00:00', Capacity=0, FieldInt1=0, FieldInt2=0 where ActID='E1070510021';
+update [enterprise_Act] set Name ='【台中】手做親子瘋麗寶之行（報名截止版）', RegExpDay='2018-12-20 00:00:00', Capacity=40, FieldInt1=0, FieldInt2=0 where ActID='E1070510027';
+
+update [enterprise_Act] set Name ='【雲林】二日笑傲樂園任遨遊之旅-親子（正常版）', RegExpDay='2019-02-20 00:00:00', Capacity=40, FieldInt1=14, FieldInt2=2 where ActID='E2080101001';
+update [enterprise_Act] set Name ='【雲林】二日笑傲樂園任遨遊之旅-親子（名額不足版）', RegExpDay='2019-02-20 00:00:00', Capacity=1, FieldInt1=1, FieldInt2=1 where ActID='E2080101002';
+update [enterprise_Act] set Name ='【雲林】二日笑傲樂園任遨遊之旅-親子（四人房不足版）', RegExpDay='2019-02-20 00:00:00', Capacity=36, FieldInt1=14, FieldInt2=0 where ActID='E2080101003';
+update [enterprise_Act] set Name ='【台南】瘋遊古蹟城（報名截止版）', RegExpDay='2018-12-20 00:00:00', Capacity=40, FieldInt1=14, FieldInt2=2 where ActID='E2080101004';
+update [enterprise_Act] set Name ='【台南】瘋遊古蹟城（房間全滿版）', RegExpDay='2019-02-05 00:00:00', Capacity=3, FieldInt1=0, FieldInt2=0 where ActID='E2080101005';
+
+INSERT INTO [enterprise_odt]
+([OrderID],[ActID],[ActName],[Name],[SID],[EmpID],[DOB],[Sex],[Cell],[Email],[Price],[Comment],[IsVeg])
+VALUES
+('M1071221001', 'E1070510021', '【新竹】與長頸鹿有約~綠光小探險之旅-適合全年齡(第三梯次)', '沈紋興', 'E123012549', '11101258', '1981-09-04', '男', '0922-508147', 'mark.lee@wtmec.com', 0, '', 0);
+INSERT INTO [enterprise_odt]
+([OrderID],[ActID],[ActName],[Name],[SID],[EmpID],[DOB],[Sex],[Cell],[Email],[Price],[Comment],[IsVeg])
+VALUES
+('M1071221001', 'E1070510021', '【新竹】與長頸鹿有約~綠光小探險之旅-適合全年齡(第三梯次)', 'DF', 'N267839332', '', '1980-10-12', '女', '0922-508147', 'mark.lee@wtmec.com', 0, '', 0);
+
+
+INSERT INTO [enterprise_od]
+([OrderID],[Name],[Tel1],[Tel2],[Cell1],[cell2],[Fax],[Address],[Email],[TotalPrice],[IsPaid],[IsConfirm],[IsPromote],[Comment],[Source],[Company])
+VALUES
+('M1071221001', '沈紋興', '02-8226-9088#8783', '', '0922-508147', '', '', '新北市中和區中正路738號14樓', 'mark.lee@wtmec.com', 0, 0, 0, 0, '共 2 位參加人〈0 位 0-3 歲兒童〉', '', 'wt');
+
+Select * FROM enterprise_Act WHERE ActID LIKE 'E1060718%';
+
+/*
+DELETE FROM enterprise_odt WHERE OrderID = 'M1060725001';
+DELETE FROM enterprise_od WHERE OrderID = 'M1060725001';
+UPDATE enterprise_Act SET Capacity =34, FieldInt2=3, FieldInt1=11 WHERE ActID = 'E1060718002';
+
+*/
+
+
+Select * FROM enterprise_od WHERE OrderID LIKE 'M%';
+Select * FROM enterprise_odt WHERE OrderID LIKE 'M%';
+Select * FROM enterprise_Act WHERE ActID LIKE 'E1060718%';
+
+
+WITH CTE AS (
+SELECT OrderID FROM enterprise_odt WHERE EmpID = '11101153'
+)
+SELECT 
+o.OrderID, o.Name AS [Leader], o.Tel1 AS [Phone], o.Tel2 AS [Room], o.email, o.TotalPrice, o.Comment,
+t.ActID, t.ActName, t.Name AS [Joiner], t.SID, t.EmpID, t.DOB, t.Sex, t.Cell, t.Email AS [PersonMail], t.Size, t.IsVeg, t.price, t.Comment as [Summary]
+FROM CTE AS MJ 
+LEFT JOIN 
+enterprise_odt AS t 
+ON
+MJ.OrderID = t.OrderID
+LEFT JOIN 
+enterprise_od AS o
+ON
+MJ.OrderID = o.OrderID
+ORDER BY o.OrderID
+
+WITH CTE AS (
+	SELECT OrderID FROM [dbo].[enterprise_odt] WHERE EmpID = '11101153' AND [SID] = 'F125368607'
+	)
+	SELECT 
+	o.OrderID, 
+	o.Name AS [Leader], 
+	o.Tel1 AS [Phone], 
+	o.Tel2 AS [Room], 
+	o.email, 
+	o.TotalPrice, 
+	o.Comment,
+	t.ActID, 
+	t.ActName, 
+	t.Name AS [Joiner], 
+	t.[SID], 
+	t.EmpID, 
+	t.DOB, 
+	t.Sex, 
+	t.Cell, 
+	t.Email AS [PersonMail], 
+	t.Size, 
+	t.IsVeg, 
+	t.price, 
+	t.Comment as [Summary],
+	t.[Seqno],
+	a.[StartDay],
+	a.[RegExpDay]
+	FROM CTE AS MJ 
+	LEFT JOIN 
+	[dbo].[enterprise_odt] AS t 
+	ON
+	MJ.OrderID = t.OrderID
+	LEFT JOIN 
+	[dbo].[enterprise_od] AS o
+	ON
+	MJ.OrderID = o.OrderID
+	LEFT JOIN
+	[dbo].[enterprise_Act] AS a
+	ON
+	t.[ActID] = a.[ActID]
+	ORDER BY o.OrderID
+
+
+TRUNCATE TABLE [enterprise_tempOd];
+TRUNCATE TABLE [enterprise_tempOdt];
+
+
+insert into [dbo].[enterprise_wt_employee] ([SID],[EID],[Name]) VALUES ('2322','11101201','曹秀鈴');
+insert into [dbo].[enterprise_wt_employee] ([SID],[EID],[Name]) VALUES ('8607','11101153','李仲軒');
+
+2322	11101201	曹秀鈴
+8607	11101153	李仲軒
+9665	11100811	謝政樺
+2549	11101258	沈紋興
+
+CREATE TABLE [dbo].[enterprise_wt_employee]
+(
+  [SID] [nvarchar](4) NOT NULL,
+  [EID] INT NOT NULL,
+  [Name] [nvarchar](20) NULL
+  CONSTRAINT PK_UserGroup PRIMARY KEY NONCLUSTERED ([SID], [EID])
+)
+
+
+INSERT INTO [ztest_od]
+(
+[OrderID],[Name],[Tel1],[Tel2],[Cell1],[cell2],[Fax],[Address],[Email],
+[TotalPrice],[IsPaid],[IsConfirm],[IsPromote],[Comment],[Source],[Company]
+)
+VALUES
+(
+ 'M1070000001', 'AAA', '02-8226-9088#8783', '', '0922-508147', '', '', '', 'mark.lee@wtmec.com',
+ 1000, 0, 0, 0, 'CMMT', '', ''
+);
+
+
+
+INSERT INTO [ztest_odt]
+([OrderID],[ActID],[ActName],[Name],[SID],[EmpID],[DOB],[Sex],[Cell],[Email],[Price],[Comment],[IsVeg])
+VALUES
+('M2070000002', 'E2070510028', '二日遊', 'AAA', 'F125368607', '11101153', '1981-09-04', '男', '0922-508147', 'mark.lee@wtmec.com', 0, '', 0);
+INSERT INTO [ztest_odt]
+([OrderID],[ActID],[ActName],[Name],[SID],[EmpID],[DOB],[Sex],[Cell],[Email],[Price],[Comment],[IsVeg])
+VALUES
+('M2070000002', 'E2070510028', '二日遊', 'BBB', 'A224761825', '', '1980-10-12', '女', '0922-508147', 'mark.lee@wtmec.com', 0, '', 0);
+INSERT INTO [ztest_odt]
+([OrderID],[ActID],[ActName],[Name],[SID],[EmpID],[DOB],[Sex],[Cell],[Email],[Price],[Comment],[IsVeg])
+VALUES
+('M2070000002', 'E2070510028', '二日遊', 'CCC', 'F133913572', '', '2016-05-18', '男', '0922-508147', 'mark.lee@wtmec.com', 500, '', 0);
+INSERT INTO [ztest_odt]
+([OrderID],[ActID],[ActName],[Name],[SID],[EmpID],[DOB],[Sex],[Cell],[Email],[Price],[Comment],[IsVeg])
+VALUES
+('M2070000002', 'E2070510028', '二日遊', 'DDD', 'F233606305', '', '2018-02-21', '女', '0922-508147', 'mark.lee@wtmec.com', 500, '', 0);
+
+CREATE TABLE [dbo].[ztest_act](
+	[ActID] [nvarchar](15) NOT NULL,
+	[Name] [nvarchar](50) NOT NULL,
+	[StartDay] [smalldatetime] NOT NULL CONSTRAINT [DF_ztest_act_StartDay]  DEFAULT (getdate()),
+	[RegExpDay] [smalldatetime] NOT NULL CONSTRAINT [DF_ztest_act_RegExpDay]  DEFAULT (getdate()),
+	[Capacity] [smallint] NOT NULL CONSTRAINT [DF_ztest_act_Capacity]  DEFAULT ((80)),
+	[Price] [smallint] NOT NULL CONSTRAINT [DF_ztest_act_Price]  DEFAULT ((0)),
+	[Price2] [smallint] NOT NULL CONSTRAINT [DF_ztest_act_Price2]  DEFAULT ((0)),
+	[Company] [nvarchar](50) NOT NULL CONSTRAINT [DF_ztest_act_Company]  DEFAULT (''),
+	[Enable] [bit] NOT NULL CONSTRAINT [DF_ztest_act_Enable]  DEFAULT ((1)),
+	[FieldStr1] [nvarchar](255) NULL,
+	[FieldStr2] [nvarchar](255) NULL,
+	[FieldInt1] [smallint] NULL,
+	[FieldInt2] [smallint] NULL,
+ CONSTRAINT [PK_ztest_act_ActID] PRIMARY KEY CLUSTERED 
+(
+	[ActID] ASC
+)WITH (PAD_INDEX = OFF, STATISTICS_NORECOMPUTE = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS = ON, ALLOW_PAGE_LOCKS = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+GO
+
+INSERT INTO [ztest_act]
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+    VALUES
+('E1070510028','TestA一日遊', '2018-12-22 00:00:00' ,'2018-11-16 00:00:00' , 40 , 1000, 1000, 'CMP', 1, '','',0, 0);
+
+INSERT INTO [ztest_act]
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+    VALUES
+('E1070510029','TestB一日遊', '2018-12-14 00:00:00' ,'2018-11-14 00:00:00' , 40 , 1000, 1000, 'CMP', 1, '','',0, 0);
+
+INSERT INTO [ztest_act]
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+    VALUES
+('E1070510030','TestC一日遊', '2018-12-18 00:00:00' ,'2018-11-18 00:00:00' , 40 , 1000, 1000, 'CMP', 1, '','',0, 0);
+
+INSERT INTO [ztest_act]
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+    VALUES
+('E2070510028','TestA二日遊', '2018-12-15 00:00:00' ,'2018-11-09 00:00:00' , 40 , 1000, 1000, 'CMP', 1, '','',14, 6);
+
+INSERT INTO [ztest_act]
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+    VALUES
+('E2070510031','TestB二日遊', '2018-12-17 00:00:00' ,'2018-11-17 00:00:00' , 40 , 1000, 1000, 'CMP', 1, '','',14, 6);
+
+INSERT INTO [ztest_act]
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+    VALUES
+('E2070510032','TestC二日遊', '2018-12-20 00:00:00' ,'2018-11-20 00:00:00' , 40 , 1000, 1000, 'CMP', 1, '','',14, 6);
+
+INSERT INTO [ztest_act]
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+    VALUES
+('E2070510033','TestD二日遊', '2018-12-23 00:00:00' ,'2018-11-23 00:00:00' , 80 , 1000, 1000, 'CMP', 1, '','',16, 8);
+
+select * from [ztest_act];
+
+
+WITH CTE AS (
+SELECT OrderID FROM [dbo].[ztest_odt] WHERE EmpID = '11101153' AND [SID] = 'F125368607'
+)
+SELECT 	
+o.OrderID, 	o.Name AS [Leader], o.Tel1 AS [Phone],o.Tel2 AS [Room], o.email, o.TotalPrice, o.Comment,
+t.ActID,t.ActName,t.Name AS [Joiner], t.[SID], t.EmpID, t.DOB, t.Sex, t.Cell, t.Email AS [PersonMail], t.Size, t.IsVeg, t.price, t.Comment as [Summary],t.[Seqno],
+a.[StartDay], a.[RegExpDay]
+FROM CTE AS MJ LEFT JOIN [dbo].[ztest_odt] AS t ON	MJ.OrderID = t.OrderID
+LEFT JOIN [dbo].[ztest_od] AS o ON	MJ.OrderID = o.OrderID
+LEFT JOIN [dbo].[ztest_act] AS a ON t.[ActID] = a.[ActID]
+ORDER BY o.OrderID
+;

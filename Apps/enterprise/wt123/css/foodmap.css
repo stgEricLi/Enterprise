@@ -1,0 +1,12 @@
+﻿#FoodPanel table{  margin:12px auto; border-collapse:collapse;}
+#FoodPanel table td { border:none; background:#FFD1A5;}
+#L1, #R2{ cursor:pointer;}
+
+#L1:hover,#R2:hover,#L2:hover,#R1:hover{ border:solid 1px red;}
+
+.modal-dialog {
+    width: 1024px; /* respsonsive width */
+   text-align:center;
+}
+
+#popCnt img { margin:0 auto;}

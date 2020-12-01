@@ -1,0 +1,75 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="utf-8" />
+    <title>MCP Entereprice Backend</title>      
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet"/>
+    <link href="lib/css/dx.common.css" rel="stylesheet" />
+    <link href="lib/css/dx.light.css" rel="stylesheet" />   
+    <!-- BEGIN CSS SECTION -->
+    <link href="css/main.css" rel="stylesheet" type="text/css"/>
+    <!-- END CSS SECTION -->
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body>
+  <div class="mcp-container scroll-enabled">
+        <div class="nav-menu hide">
+        </div>
+        <div class="content-container">
+            <div class="mcp-header">
+                <h1>Biamp Device Management</h1>
+            </div>
+            <div class="mcp-body">
+            </div>
+            <div id='detailed-loadpanel'></div>
+            <div id='loadpanel'></div>
+            <div id='error-popup'></div>
+        </div>
+    </div>
+
+    <!-- Javascript library -->
+    <script src="lib/js/underscore-1.8.3.min.js"></script>
+    <script src="lib/js/mustache-2.3.0.min.js"></script>
+    <script src="lib/js/jquery-3.2.1.min.js"></script>
+    <script src="lib/js/backbone-1.3.3.min.js"></script>
+    <script src="lib/js/jquery.cookie.js"></script>
+    <script src="lib/js/dx.all.js"></script>
+    <script src="lib/js/moment.2.22.2.min.js"></script>
+
+    <!-- BEGIN JS SECTION -->
+    <script src="js/stringTable.js"></script>
+    <script src="js/dialog.js"></script>
+    <script src="js/router.js"></script>
+    <!--<script src="js/apicall.js"></script>-->
+    <script src="js/app.js"></script>
+    <script src="js/models/baseModel.js"></script>
+
+    <script src="js/views/baseView.js"></script>
+    <script src="js/views/loginView.js"></script>
+    <script src="js/views/defaultView.js"></script>
+
+    <!--END JS SECTION -->
+
+  <script>
+    $(document).ready(function () {
+      App.initialize();
+    });
+
+    //$("#reveal-password").on('click', function () {
+    //  $('#password').attr('type', 'text')
+    //});
+    //$(".toggle-password").click(function () {
+    //  $(this).toggleClass("eye-open eye-slash");
+    //  var input = $($(this).attr("toggle"));
+    //  if (input.attr("type") == "password") {
+    //    input.attr("type", "text");
+    //  } else {
+    //    input.attr("type", "password");
+    //  }
+    //});
+    </script>
+
+    <script id="startupview-template" type="text/template">
+    </script>
+</body>
+</html>

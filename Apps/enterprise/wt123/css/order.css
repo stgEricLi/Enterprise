@@ -1,0 +1,25 @@
+﻿.jumbotron {margin-top:12px; margin-bottom:6px; padding:12px 8px 24px 16px!important; border:dotted 1px #c0c0c0;background-color:transparent !important; }
+
+.modal-dialog { width: 88%!important; }
+
+.cnt{ display: none;}
+
+.table {font-size:13px!important; }
+.table th{ border-top:none!important;}
+.table td{ text-align:center; padding:6px; }
+tr.newline, tr.initial {color:#3399FF;  }
+
+ul { margin:0px; padding:0px; list-style:none; margin-bottom:24px; }
+ul li { margin-bottom:6px;}
+ul input, ul select { display:inline-block!important; background-color:#FFFFCC!important;}
+
+.panel-body {background-color:#fff; }
+.emphsize { font-weight:bold; color:#990000; }
+
+#purchase input { width:64px!important;display:inline-block!important; margin-right:4px; }
+#purchase span { font-weight:bold; }
+
+.discount { margin-left:4px; margin-right:4px; }
+
+.panel-danger > .panel-heading-custom {background: red!important; color: #fff!important;  }
+.panel-danger  { border-color: red!important; }

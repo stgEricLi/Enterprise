@@ -1,0 +1,39 @@
+﻿
+ 
+-----------------------------------------------------------------------------------------
+                                 [enterprise_News] 最新消息
+-----------------------------------------------------------------------------------------
+CREATE TABLE [enterprise_News](	
+	[NewsID] [int] IDENTITY(1,1) NOT NULL,		--流水號
+	[Desc] [nvarchar](256) NOT NULL,			--消息內容
+	[NewsDate] [smalldatetime] NOT NULL,		--下單日
+	[Link] [nvarchar](Max) NULL,				--對外連結
+	[Company] [nvarchar](50) NOT NULL,				--企業代號
+	[Enable] [bit]   NOT NULL,					--是否開啟
+ CONSTRAINT [PK_enterprise_News_NewsID] PRIMARY KEY CLUSTERED 
+(
+	[NewsID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [enterprise_News] ADD  CONSTRAINT [DF_enterprise_News_Enable]  DEFAULT (0) FOR [Enable]
+GO
+ALTER TABLE [enterprise_News] ADD  CONSTRAINT [DF_enterprise_News_NewsDate]  DEFAULT (getdate()) FOR [NewsDate]
+GO
+
+
+-----------------------------------------------------------------------------------------
+                                 [enterprise_wt_Fitness] 文曄減重
+-----------------------------------------------------------------------------------------
+CREATE TABLE [enterprise_wt_Fitness](	
+	[ID] [int] IDENTITY(1,1) NOT NULL,			--流水號
+	[Period] [nvarchar](50) NOT NULL,			--區間
+	[Goal] [nvarchar](256) NOT NULL,			--目標內容
+ CONSTRAINT [PK_enterprise_wt_Fitness_ID] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+

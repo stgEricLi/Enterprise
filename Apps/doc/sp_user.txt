@@ -1,0 +1,103 @@
+﻿ALTER PROCEDURE [dbo].[enterprise_all_Users_Get] 
+@PageNumber             INT = 1,
+@PageSize               INT = 5,
+@FilterBy NVARCHAR(25) = NULL,
+@Filter NVARCHAR(50) = NULL
+AS
+BEGIN	
+	DECLARE @totalRow AS INT;
+
+	IF @FilterBy='Email' OR @FilterBy='Name'
+	BEGIN
+		;WITH CTE AS
+		(
+			SELECT 
+			ROW_NUMBER() OVER ( ORDER BY [UserName] DESC) AS [RowNum],
+			U.[UserId],
+			U.[UserName],
+			M.[Password],
+			M.[Email],
+			M.[PasswordQuestion],
+			M.[LastLoginDate],
+			M.[IsApproved],
+			M.[IsLockedOut],
+			M.[LastLockoutDate],
+			M.[FailedPasswordAttemptCount],
+			M.[FailedPasswordAnswerAttemptCount]
+			FROM 
+			dbo.aspnet_Users AS U 
+			INNER JOIN 
+			dbo.aspnet_Membership AS M
+			ON
+			U.[UserId] = M.[UserId] 
+			WHERE 
+			@Filter IS NULL 
+			OR
+			CASE 
+				WHEN @FilterBy='Email' THEN M.[Email]
+				WHEN @FilterBy='Name' THEN U.[UserName]
+			END
+			LIKE @Filter + '%'							
+		)
+		SELECT 
+		[UserId],
+		[UserName],
+		[Email],
+		[PasswordQuestion],
+		[LastLoginDate],
+		[IsApproved],
+		[IsLockedOut], 
+		[FailedPasswordAttemptCount],
+		[FailedPasswordAnswerAttemptCount]
+		FROM CTE 
+		WHERE 
+		  (RowNum > @PageSize * (@PageNumber - 1) )
+		  AND 
+		  (RowNum <= @PageSize * @PageNumber )
+		ORDER BY RowNum;
+	END
+
+
+	IF @FilterBy='All'
+	BEGIN
+		;WITH CTE AS
+		(
+			SELECT 
+			ROW_NUMBER() OVER ( ORDER BY [UserName] DESC) AS [RowNum],
+			U.[UserId],
+			U.[UserName],
+			M.[Password],
+			M.[Email],
+			M.[PasswordQuestion],
+			M.[LastLoginDate],
+			M.[IsApproved],
+			M.[IsLockedOut],
+			M.[LastLockoutDate],
+			M.[FailedPasswordAttemptCount],
+			M.[FailedPasswordAnswerAttemptCount]
+			FROM 
+			dbo.aspnet_Users AS U 
+			INNER JOIN 
+			dbo.aspnet_Membership AS M
+			ON
+			U.[UserId] = M.[UserId] 									
+		)
+		SELECT 
+		[UserId],
+		[UserName],
+		[Email],
+		[PasswordQuestion],
+		[LastLoginDate],
+		[IsApproved],
+		[IsLockedOut], 
+		[FailedPasswordAttemptCount],
+		[FailedPasswordAnswerAttemptCount]
+		FROM CTE 
+		WHERE 
+		  (RowNum > @PageSize * (@PageNumber - 1) )
+		  AND 
+		  (RowNum <= @PageSize * @PageNumber )
+		ORDER BY RowNum;
+	END
+	
+END

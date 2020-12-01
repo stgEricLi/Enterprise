@@ -1,0 +1,193 @@
+﻿
+/*
+
+delete from enterprise_od where OrderID like 'M%';
+delete from enterprise_odt where OrderID like 'M%';
+UPDATE [enterprise_Act] SET [Capacity]=80, [FieldInt1]=24,[FieldInt2]=4 WHERE [ActID]='E1070510001';
+
+select * from enterprise_od where OrderID like 'M%';
+select * from enterprise_odt where OrderID like 'M%';
+
+select * from enterprise_Act Where ActID='E1070510001';
+
+/*
+
+
+UPDATE [enterprise_Act] SET [Capacity]=80, [FieldInt1]=24,[FieldInt2]=4 WHERE [ActID]='E1070510001';
+UPDATE [enterprise_Act] SET [Capacity]=80, [FieldInt1]=24,[FieldInt2]=4 WHERE [ActID]='E1070510005';
+UPDATE [enterprise_Act] SET [Capacity]=80, [FieldInt1]=24,[FieldInt2]=4 WHERE [ActID]='E1070510012';
+
+UPDATE [enterprise_Act] SET [Capacity]=40, [FieldInt1]=12,[FieldInt2]=2 WHERE [ActID]='E1070510003';
+
+
+UPDATE [enterprise_Act] SET [Name]=N'【宜蘭】激流中的步伐體驗-深度之旅-適合10-60歲' WHERE [ActID]='E1070510016';
+
+select * from [enterprise_Act] where [ActID] LIKE 'E10705100%';
+
+
+INSERT INTO [enterprise_Act] 
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+
+('E1070510001',N'【雲林】笑傲樂園任遨遊之旅-親子-大小孩6-18歲(第一梯次)','2018-09-01','2018-07-20',80,5000,5000,'wt2014',1,'','',0,0);
+('E1070510002',N'【雲林】笑傲樂園任遨遊之旅-親子-大小孩6-18歲(第二梯次)','2018-10-20','2018-09-14',40,5000,5000,'wt2014',1,'','',0,0); 
+('E1070510003',N'【雲林】笑傲樂園任遨遊之旅-親子-大小孩6-18歲(第三梯次)','2018-11-03','2018-09-28',40,5000,5000,'wt2014',1,'','',0,0);
+
+('E1070510004',N'【台南】瘋遊古蹟城~歡笑賞玩南台灣-親子-小小孩3-10歲(第一梯次)','2018-11-24','2018-10-19',40,5000,5000,'wt2014',1,'','',12,2); 
+('E1070510005',N'【台南】瘋遊古蹟城~歡笑賞玩南台灣-親子-小小孩3-10歲(第二梯次)','2018-12-08','2018-11-02',80,5000,5000,'wt2014',1,'','',24,4); 
+
+('E1070510006',N'【台中】手做親子瘋麗寶之行-親子同行-大小孩6-18歲','2018-11-17','2018-10-12',40,5000,5000,'wt2014',1,'','',12,2);
+
+('E1070510007',N'【花蓮】後山親子樂活~海洋總動員之旅-親子-小小孩3-12歲(第一梯次)','2018-09-08','2018-08-03',40,5000,5000,'wt2014',1,'','',12,2);
+('E1070510008',N'【花蓮】後山親子樂活~海洋總動員之旅-親子-小小孩3-12歲(第二梯次)','2018-09-29','2018-08-24',40,5000,5000,'wt2014',1,'','',12,2);
+
+('E1070510009',N'【台北】漫遊明池~悠遊馬告神木群之旅-青年體驗(第一梯次)','2018-11-03','2018-09-28',40,5000,5000,'wt2014',1,'','',12,2);
+('E1070510010',N'【台北】漫遊明池~悠遊馬告神木群之旅-青年體驗(第二梯次)','2018-12-01','2018-10-26',40,5000,5000,'wt2014',1,'','',12,2);
+('E1070510011',N'【台北】漫遊明池~悠遊馬告神木群之旅-青年體驗(第三梯次)','2018-12-08','2018-11-02',40,5000,5000,'wt2014',1,'','',12,2);
+
+('E1070510012',N'【宜蘭】雲霧繚繞~山中健行之旅-青年體驗(第一梯次)','2018-11-17','2018-10-12',80,5000,5000,'wt2014',1,'','',24,4);
+('E1070510013',N'【宜蘭】雲霧繚繞~山中健行之旅-青年體驗(第二梯次)','2018-11-24','2018-10-19',40,5000,5000,'wt2014',1,'','',12,2);
+
+('E1070510014',N'【花蓮】花蓮山海脈動深度之旅-深度之旅-適合10-70歲(第一梯次)','2018-09-01','2018-07-27',40,5000,5000,'wt2014',1,'','',12,2);
+('E1070510015',N'【花蓮】花蓮山海脈動深度之旅-深度之旅-適合10-70歲(第二梯次)','2018-09-29','2018-08-24',40,5000,5000,'wt2014',1,'','',12,2);
+
+('E1070510016',N'【宜蘭】激流中的步伐體驗-深度之旅-適合10-70歲','2018-09-08','2018-08-03',40,5000,5000,'wt2014',1,'','',12,2);
+
+('E1070510017',N'【台東】池上稻穗特色之旅-適合全年齡(第一梯次)','2018-09-08','2018-08-03',40,5000,5000,'wt2014',1,'','',12,2);
+('E1070510018',N'【台東】池上稻穗特色之旅-適合全年齡(第二梯次)','2018-09-15','2018-08-10',40,5000,5000,'wt2014',1,'','',12,2);
+
+('E1070510019',N'【新竹】與長頸鹿有約~綠光小探險之旅-適合全年齡(第一梯次)','2018-11-10','2018-10-05',40,5000,5000,'wt2014',1,'','',12,2);
+('E1070510020',N'【新竹】與長頸鹿有約~綠光小探險之旅-適合全年齡(第二梯次)','2018-12-01','2018-10-26',40,5000,5000,'wt2014',1,'','',12,2);
+('E1070510021',N'【新竹】與長頸鹿有約~綠光小探險之旅-適合全年齡(第三梯次)','2018-12-08','2018-11-02',40,5000,5000,'wt2014',1,'','',12,2);
+
+('E1070510022',N'【台中】溫泉饗宴~八仙山林美之旅適合全年齡(第一梯次)','2018-12-08','2018-11-02',40,5000,5000,'wt2014',1,'','',12,2);
+('E1070510023',N'【台中】溫泉饗宴~八仙山林美之旅適合全年齡(第二梯次)','2018-12-15','2018-11-09',40,5000,5000,'wt2014',1,'','',12,2);
+('E1070510024',N'【台中】溫泉饗宴~八仙山林美之旅適合全年齡(第三梯次)','2018-12-22','2018-11-16',40,5000,5000,'wt2014',1,'','',12,2);
+
+
+
+
+
+
+
+
+
+---------------------------------------------------------------------------------------------
+                                    [enterprise_Act] 活動行程
+---------------------------------------------------------------------------------------------
+CREATE TABLE [enterprise_Act](	
+	[ActID] [nvarchar](15) NOT NULL,				--行程編號
+	[Name] [nvarchar](50) NOT NULL,					--行程名稱
+	[StartDay] [smalldatetime] NOT NULL,			--起始日
+	[RegExpDay] [smalldatetime] NOT NULL,			--報名截止日
+	[Capacity] [smallint] NOT NULL,					--人數
+	[Price] [smallint] NOT NULL,					--價格
+	[Price2] [smallint] NOT NULL,					--價格2
+	[Company] [nvarchar](50) NOT NULL,				--企業名稱
+	[Enable] [bit] NOT NULL,						--開啟
+	[FieldStr1] [nvarchar](255) NULL,				--文字擴充欄位
+	[FieldStr2] [nvarchar](255) NULL,				--文字擴充欄位
+	[FieldInt1] [smallint]  NULL,					--數字擴充欄位
+	[FieldInt2] [smallint]  NULL,					--數字擴充欄位
+ CONSTRAINT [PK_enterprise_Act_ActID] PRIMARY KEY CLUSTERED 
+(
+	[ActID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [enterprise_Act] ADD  CONSTRAINT [DF_enterprise_Act_StartDay]  DEFAULT (getdate()) FOR [StartDay]
+GO
+ALTER TABLE [enterprise_Act] ADD  CONSTRAINT [DF_enterprise_Act_RegExpDay]  DEFAULT (getdate()) FOR [RegExpDay]
+GO
+ALTER TABLE [enterprise_Act] ADD  CONSTRAINT [DF_enterprise_Act_Capacity]  DEFAULT (80) FOR [Capacity]
+GO
+ALTER TABLE [enterprise_Act] ADD  CONSTRAINT [DF_enterprise_Act_Price]  DEFAULT ((0)) FOR [Price]
+GO
+ALTER TABLE [enterprise_Act] ADD  CONSTRAINT [DF_enterprise_Act_Price2]  DEFAULT ((0)) FOR [Price2]
+GO
+ALTER TABLE [enterprise_Act] ADD  CONSTRAINT [DF_enterprise_Act_Company]  DEFAULT ('') FOR [Company]
+GO
+ALTER TABLE [enterprise_Act] ADD  CONSTRAINT [DF_enterprise_Act_Enable]  DEFAULT (1) FOR [Enable]
+GO
+
+ ---------------------------------------------------------------------------------------------
+                                    [sky_ActLocation] 藍天活動教室或地點
+---------------------------------------------------------------------------------------------
+CREATE TABLE [sky_ActLocation](	
+  [SeqNo] [int] IDENTITY(1,1) NOT NULL,	--//流水號
+	[ActID] [nvarchar](15) NOT NULL,	--// 課程編號
+	[Loc] [nvarchar](50) NOT NULL,   --// 課程地點
+	[Capacity] [smallint] NOT NULL,		--//名額
+	[Available] [bit] NOT NULL,   --//是否開梯
+ CONSTRAINT [PK_sky_ActLocation_SeqNo] PRIMARY KEY CLUSTERED 
+(
+	[SeqNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [sky_ActLocation] ADD  CONSTRAINT [DF_sky_ActLocation_Capacity]  DEFAULT ((30)) FOR [Capacity]
+GO
+ALTER TABLE [sky_ActLocation] ADD  CONSTRAINT [DF_sky_ActLocation_Available]  DEFAULT ((0)) FOR [Available]
+GO
+
+
+ ---------------------------------------------------------------------------------------------
+                                    [sky_ActDiscount] 藍天活動折扣
+-------------------------------------------------------------------------------------------
+CREATE TABLE [sky_ActDiscount](	
+  [SeqNo] [int] IDENTITY(1,1) NOT NULL,	--//流水號
+	[Name] [nvarchar](20) --//折扣名稱
+	[EarlyBird1] [smallint] NOT NULL,	--// 早鳥優惠1
+	[EarlyBird2] [smallint] NOT NULL,	--// 早鳥優惠2
+	[OldCust] [smallint] NOT NULL,	--// 舊生優惠
+	[Group] [smallint] NOT NULL,	--// 團體同行優惠
+	[Discount] [smallint] NOT NULL,	--// 直接折扣
+	[IsApply] [bit] NOT NULL, --//是否應用
+	[ModifiedDay] [datetime] NOT NULL,
+ CONSTRAINT [PK_sky_ActDiscount_SeqNo] PRIMARY KEY CLUSTERED 
+(
+	[SeqNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [sky_ActDiscount] ADD  CONSTRAINT [DF_sky_ActLocation_EarlyBird1]  DEFAULT ((0)) FOR [EarlyBird1]
+GO
+ALTER TABLE [sky_ActDiscount] ADD  CONSTRAINT [DF_sky_ActLocation_EarlyBird2]  DEFAULT ((0)) FOR [EarlyBird2]
+GO
+ALTER TABLE [sky_ActDiscount] ADD  CONSTRAINT [DF_sky_ActLocation_OldCust]  DEFAULT ((0)) FOR [OldCust]
+GO
+ALTER TABLE [sky_ActDiscount] ADD  CONSTRAINT [DF_sky_ActLocation_Group]  DEFAULT ((0)) FOR [Group]
+GO
+ALTER TABLE [sky_ActDiscount] ADD  CONSTRAINT [DF_sky_ActLocation_Discount]  DEFAULT ((0)) FOR [Discount]
+GO
+ALTER TABLE [sky_ActDiscount] ADD  CONSTRAINT [DF_sky_ActLocation_IsApply]  DEFAULT ((0)) FOR [IsApply]
+GO
+ALTER TABLE [sky_ActDiscount] ADD  CONSTRAINT [DF_sky_ActLocation_ModifiedDay]  DEFAULT (getdate()) FOR [ModifiedDay]
+GO
+
+
+ ---------------------------------------------------------------------------------------------
+                                    [sky_ActHot] 藍天熱門活動
+-------------------------------------------------------------------------------------------
+CREATE TABLE [sky_ActHot](	
+    [SeqNo] [int] IDENTITY(1,1) NOT NULL,	--//流水號
+    [ActID] [nvarchar](15) NOT NULL,	--// 課程編號
+	[Name] [nvarchar](200) NOT NULL,--//熱門活動名稱
+	[Location] [nvarchar](50) NOT NULL,--//熱門活動地點
+	[Day] [nvarchar](50) NOT NULL,--//熱門活動日期
+	[Price] [smallint] NOT NULL,	--// 金額
+	[Page] [nvarchar](20) NOT NULL,   --// 所屬頁面
+	[AgeRange] [nvarchar](20) NOT NULL,
+	[ModifiedDay] [datetime] NOT NULL,
+ CONSTRAINT [PK_sky_ActHot_SeqNo] PRIMARY KEY CLUSTERED 
+(
+	[SeqNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [sky_ActHot] ADD  CONSTRAINT [DF_sky_ActHot_ModifiedDay]  DEFAULT (getdate()) FOR [ModifiedDay]
+GO
+ALTER TABLE [sky_ActHot] ADD  CONSTRAINT [DF_sky_ActHot_Price]  DEFAULT (5000) FOR [Price]
+GO
+ALTER TABLE [sky_ActHot] ADD  CONSTRAINT [DF_sky_ActHot_Page]  DEFAULT ('search') FOR [Page]
+GO

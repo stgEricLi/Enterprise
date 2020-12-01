@@ -1,0 +1,20 @@
+﻿miscellaneous
+
+
+-----------------------------------------------------------------------------------------
+                                 [enterprise_wt_Miscellaneous] 文曄減重
+-----------------------------------------------------------------------------------------
+CREATE TABLE [enterprise_wt_Miscellaneous](	
+	[ID] [int] IDENTITY(1,1) NOT NULL,			--流水號
+	[Company] [nvarchar](50) NULL,				--企業代號
+	[intField1] INT NULL,						--數字擴充欄位			
+	[intField2] INT NULL,						--數字擴充欄位
+	[txtField1] [nvarchar](256) NULL,			--文字擴充欄位
+	[txtField2] [nvarchar](256) NULL,			--文字擴充欄位	
+	[dayField] datetime NULL,		
+ CONSTRAINT [PK_enterprise_wt_Miscellaneous_ID] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO

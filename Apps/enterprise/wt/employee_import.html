@@ -1,0 +1,88 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <title>CSV File Import</title>
+    <meta name="description" content="" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+    <script>
+      $(function () {
+        $("#FileEmpImport").change(function () {
+          ExportToTable();
+        });
+      });
+
+      var empArry = [];
+
+      function ExportToTable() {
+        var regex = /^([a-zA-Z0-9\s_\\.\-:])+(.csv)$/;
+
+        if (!regex.test($("#FileEmpImport").val().toLowerCase())) {
+          //showMsg("Please upload a valid CSV file!")
+          alert("Please upload a valid CSV file!");
+          return false;
+        }
+
+        if (typeof FileReader == "undefined") {
+          alert("Sorry! Your browser does not support HTML5!");
+          return false;
+        }
+
+        var reader = new FileReader();
+        reader.onload = function (e) {
+          //console.log(e.target.result);
+
+          var isDupl = false;
+          var sp = "<p>TRUNCATE TABLE [dbo].[enterprise_wt_employee];</p>",
+            str = "",
+            where = "";
+
+          var preDateTime = "";
+
+          var csvrows = e.target.result.split("\n"); // Get Rows
+
+          $.each(csvrows, function (i) {
+            var cols = csvrows[i].split(","); // Get Columns
+
+            if (cols.length != 3) {
+              console.log("Row " + i + " doesn't has enough columns. (Skip)");
+              return true;
+            }
+
+            if (isEmpIDExist(cols[0])) {
+              console.log("Row " + i + " duplicate ID " + cols[0] + " detected. (Skip)");
+              return true;
+            }
+
+            sp += "<p>INSERT [dbo].[enterprise_wt_employee] ([SID],[EID],[Name]) VALUES ('" + cols[0] + "', '" + cols[1] + "', N'" + cols[2] + "');</p>";
+            //[dbo].[enterprise_wt_employee] ([SID],[EID],[Name]) VALUES ('8607','11101153','李仲軒');
+          });
+
+          $("#output").html(sp);
+        };
+
+        reader.readAsText($("#FileEmpImport")[0].files[0]);
+      }
+
+      function isEmpIDExist(empid) {
+        //console.log("Search: " + empid);
+        var returnArry = $.grep(empArry, function (e) {
+          return e.employee_id === empid;
+        });
+        if (returnArry.length > 0) return true;
+        else return false;
+      }
+    </script>
+  </head>
+  <body>
+    <div id="container">
+      <div style="margin-top: 42px; margin-bottom: 42px;">
+        <label for="FileEmpImport" class="custom-file-upload">Import a CSV File</label>
+        <input id="FileEmpImport" type="file" />
+      </div>
+      <div id="output"></div>
+    </div>
+  </body>
+</html>

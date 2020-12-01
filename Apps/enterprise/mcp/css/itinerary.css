@@ -1,0 +1,61 @@
+﻿body {margin:0px; padding:0px;  font-size:18px; font-family:微軟正黑體; background:#ffffcc;}
+
+.well {background-color:#fff; }
+.main { padding:24px;}
+h1 { text-align:center; color:#3366cc!important;}
+.intro ul li{  margin-top:8px; }
+
+.panel-heading { font-weight:bold; font-size:20px;}
+.list-group-item-heading { color:#0033cc; font-weight:bold;}
+.list-group-item-text { margin-top:6px; margin-bottom:6px; }
+.panel-primary .list-group-item-text { padding-left:60px;}
+
+.panel-primary .list-group-item ol { margin-left:36px; }
+.list-group-item ol li {padding-top:4px; }
+.panel-primary .list-group-item ul { margin-left:36px; }
+.list-group-item ul li {padding-top:4px; }
+
+.panel-warning ul { margin:0px; padding:0px; list-style:none;}
+.panel-warning ul li { padding-top:6px;}
+/*.panel-warning table { }
+.panel-warning table th {width:20%; }*/
+.panel-warning table th, .panel-warning table td{ text-align:center;}
+
+.panel-danger ol li { padding-top:6px;}
+
+.picture { text-align:center;}
+.picture img { width:380px; height:290px;margin:12px 24px 12px 2px;}
+
+dl dt { margin-top:6px;}
+#footer {text-align:center; color:#c0c0c0; }
+
+.pricing{ background-color:#cc0000!important; font-size:24px;}
+.emphize { color:red; font-weight:bold;}
+.descR { text-align:right; color:red;}
+.time { color:#3385ff; margin-right:6px;}
+.glyphicon-print, .glyphicon-earphone{ margin-right:6px;}
+.glyphicon-usd, .glyphicon-info-sign, .glyphicon-flag, .glyphicon-star, .glyphicon-home, .glyphicon-cutlery, .glyphicon-picture{  margin-right:12px;}
+
+/*.panel-warning ul li{font-size:18px; }
+.panel-danger ol li{font-size:18px; }*/
+
+/*.list-group-item:nth-child(2n) { background-color:#f2f2f2;}*/
+/*.list-group-item img { max-width:200px; max-height:152px; margin:12px 24px 12px 2px;}*/
+
+/*.multiple th { font-size:22px; font-weight:bold; color:#0033cc; padding:12px; }*/
+/*.multiple tr:first-child th{ color:#3b3a3a;}*/
+/*.multiple th:first-child {width:128px; }
+.multiple td {  text-align:left;}
+.multiple td ol { margin-top:12px; margin-left:0px; }
+.multiple td ol li{ margin-top:6px;}
+.title { font-size:22px; font-weight:bold; color:#0033cc;}*/
+
+/*
+
+  @media screen and (max-width: 768px) {
+    .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+  }
+    */

@@ -1,0 +1,132 @@
+﻿
+ 
+-----------------------------------------------------------------------------------------
+                                 [enterprise_Od] 報名訂單
+-----------------------------------------------------------------------------------------
+CREATE TABLE [enterprise_Od](	
+	[OrderID] [nvarchar](50) NOT NULL,			--訂單編號
+	[Name] [nvarchar](256) NOT NULL,			--聯絡人
+	[Tel1] [nvarchar](20) NULL,					--主要電話
+	[Tel2] [nvarchar](20) NULL,					--次要電話
+	[Cell1] [nvarchar](20) NULL,				--主要手機
+	[cell2] [nvarchar](20) NULL,				--次要手機
+	[Fax] [nvarchar](20) NULL,					--傳真
+	[Address] [nvarchar](256) NULL,				--地址
+	[Email] [nvarchar](300) NULL,				--Email
+	[TotalPrice] [int]  NOT NULL,				--總金額
+	[IsPaid] [bit]   NOT NULL,					--是否付款
+	[IsConfirm] [bit]   NOT NULL,				--是否確定參加
+	[IsPromote] [bit]   NOT NULL,				--是否收到廣告
+	[Comment] [nvarchar](300) NULL,				--備註說明
+	[Source] [nvarchar](20) NULL,				--消息來源
+	[Company] [nvarchar](50) NULL,				--公司企業
+	[CreateDay] [smalldatetime] NOT NULL,		--下單日
+	[FieldStr1] [nvarchar](255) NULL,			--文字擴充欄位
+	[FieldStr2] [nvarchar](255) NULL,			--文字擴充欄位
+	[FieldInt1] [smallint]  NULL,				--數字擴充欄位
+	[FieldInt2] [smallint]  NULL,				--數字擴充欄位
+ CONSTRAINT [PK_enterprise_Od_OrderID] PRIMARY KEY CLUSTERED 
+(
+	[OrderID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_OrderID]  DEFAULT ('N') FOR [OrderID]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_Name]  DEFAULT ('') FOR [Name]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_Tel1]  DEFAULT ('') FOR [Tel1]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_Cell1]  DEFAULT ('') FOR [Cell1]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_Tel2]  DEFAULT ('') FOR [Tel2]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_Cell2]  DEFAULT ('') FOR [Cell2]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_Address]  DEFAULT ('') FOR [Address]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_TotalPrice]  DEFAULT (0) FOR [TotalPrice]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_IsPaid]  DEFAULT (0) FOR [IsPaid]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_IsConfirm]  DEFAULT (0) FOR [IsConfirm]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_IsPromote]  DEFAULT (0) FOR [IsPromote]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_CreateDay]  DEFAULT (getdate()) FOR [CreateDay]
+GO
+ALTER TABLE [enterprise_Od] ADD  CONSTRAINT [DF_enterprise_Od_Company]  DEFAULT ('') FOR [Company]
+GO
+
+
+-----------------------------------------------------------------------------------------
+                                 [enterprise_Odt] 報名訂單
+-----------------------------------------------------------------------------------------
+CREATE TABLE [enterprise_Odt](	
+    [SeqNo] [int] IDENTITY(1,1) NOT NULL,		--流水號
+	[OrderID] [nvarchar](50) NOT NULL,			--訂單編號
+	[ActID] [nvarchar](15) NOT NULL,			--活動編號
+	[ActName] [nvarchar](50) NOT NULL,			--活動名稱
+	[Name] [nvarchar](50) NOT NULL,				--參加人姓名
+	[SID] [nvarchar](20) NULL,					--身份證或護照號碼
+	[EmpID] [nvarchar](20) NULL,				--員工工號
+	[DOB] [smalldatetime] NULL,					--生日
+	[Sex] [nvarchar](1) NULL,					--性別
+	[Cell] [nvarchar](20) NULL,					--聯絡手機
+	[Email] [nvarchar](256) NULL,				--聯絡Email
+	[Size] [nvarchar](5) NULL,					--衣服尺寸
+	[IsVeg] [bit]  NULL,						--是否素食
+	[IsOld] [bit]  NULL,						--是否舊客戶
+	[IsEarly] [bit] NULL,						--是否早鳥
+	[IsDiscount] [bit] NULL,					--是否有折扣
+	[Price] [int]  NOT NULL,					--金額
+	[Comment] [nvarchar](255) NULL,				--備註說明
+	[Location] [nvarchar](50) NULL,				--上課或上車地點	
+	[TempField] [nvarchar](255) NULL,			--文字擴充欄位
+	[FieldStr1] [nvarchar](255) NULL,			--文字擴充欄位
+	[FieldStr2] [nvarchar](255) NULL,			--文字擴充欄位
+	[FieldInt1] [smallint]  NULL,				--數字擴充欄位
+	[FieldInt2] [smallint]  NULL,				--數字擴充欄位
+ CONSTRAINT [PK_enterprise_Odt_SeqNo] PRIMARY KEY CLUSTERED 
+(
+	[SeqNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_OrderID]  DEFAULT ('N') FOR [OrderID]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_ActID]  DEFAULT ('') FOR [ActID]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_ActName]  DEFAULT ('') FOR [ActName]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_Name]  DEFAULT ('') FOR [Name]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_SID]  DEFAULT ('') FOR [SID]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_EmpID]  DEFAULT ('') FOR [EmpID]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_Cell]  DEFAULT ('') FOR [Cell]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_Email]  DEFAULT ('') FOR [Email]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_Sex]  DEFAULT ('男') FOR [Sex]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_Size]  DEFAULT ('L') FOR [Size]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_IsVeg]  DEFAULT (0) FOR [IsVeg]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_IsEarly]  DEFAULT (0) FOR [IsEarly]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_IsOld]  DEFAULT (0) FOR [IsOld]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_Price]  DEFAULT (0) FOR [Price]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_IsDiscount]  DEFAULT (0) FOR [IsDiscount]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_Comment]  DEFAULT ('') FOR [Comment]
+GO
+ALTER TABLE [enterprise_Odt] ADD  CONSTRAINT [DF_enterprise_Odt_Location]  DEFAULT ('') FOR [Location]
+GO
+
+

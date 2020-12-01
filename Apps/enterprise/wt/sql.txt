@@ -1,0 +1,301 @@
+﻿
+/*
+DELETE FROM enterprise_odt WHERE OrderID LIKE 'M%';
+DELETE FROM enterprise_od WHERE OrderID LIKE 'M%';
+UPDATE enterprise_Act SET FieldInt1=24, FieldInt2=4, Capacity =80 WHERE ActID = 'E1070510001';
+UPDATE enterprise_Act SET FieldInt1=12, FieldInt2=2, Capacity =40 WHERE ActID = 'E1070510014';
+http://enterprise.mcpgo.com/enterprise/wt/order_days.aspx?aid=E1070510001
+
+UPDATE [enterprise_Act] SET [Capacity]=17, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510001';
+UPDATE [enterprise_Act] SET [Capacity]=11, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510002';
+UPDATE [enterprise_Act] SET [Capacity]=12, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510003';
+UPDATE [enterprise_Act] SET [Capacity]=1, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510004';
+UPDATE [enterprise_Act] SET [Capacity]=8, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510005';
+UPDATE [enterprise_Act] SET [Capacity]=7, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510006';
+UPDATE [enterprise_Act] SET [Capacity]=6, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510007';
+UPDATE [enterprise_Act] SET [Capacity]=5, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510008';
+UPDATE [enterprise_Act] SET [Capacity]=5, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510009';
+UPDATE [enterprise_Act] SET [Capacity]=20, [FieldInt1]=8, [FieldInt2]=1 WHERE [ActID]='E1070510010';
+UPDATE [enterprise_Act] SET [Capacity]=12, [FieldInt1]=3, [FieldInt2]=0 WHERE [ActID]='E1070510011';
+UPDATE [enterprise_Act] SET [Capacity]=26, [FieldInt1]=8, [FieldInt2]=1 WHERE [ActID]='E1070510012';
+UPDATE [enterprise_Act] SET [Capacity]=9, [FieldInt1]=3, [FieldInt2]=0 WHERE [ActID]='E1070510013';
+UPDATE [enterprise_Act] SET [Capacity]=11, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510014';
+UPDATE [enterprise_Act] SET [Capacity]=16, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510015';
+UPDATE [enterprise_Act] SET [Capacity]=14, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510016';
+UPDATE [enterprise_Act] SET [Capacity]=7, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510017';
+UPDATE [enterprise_Act] SET [Capacity]=7, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510018';
+UPDATE [enterprise_Act] SET [Capacity]=3, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510019';
+UPDATE [enterprise_Act] SET [Capacity]=1, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510020';
+UPDATE [enterprise_Act] SET [Capacity]=2, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510021';
+UPDATE [enterprise_Act] SET [Capacity]=9, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510022';
+UPDATE [enterprise_Act] SET [Capacity]=-2, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510023';
+UPDATE [enterprise_Act] SET [Capacity]=5, [FieldInt1]=0, [FieldInt2]=0 WHERE [ActID]='E1070510024';
+UPDATE [enterprise_Act] SET [Capacity]=80, [FieldInt1]=28, [FieldInt2]=4 WHERE [ActID]='E1070510025';
+UPDATE [enterprise_Act] SET [Capacity]=80, [FieldInt1]=28, [FieldInt2]=4 WHERE [ActID]='E1070510026';
+UPDATE [enterprise_Act] SET [Capacity]=40, [FieldInt1]=14, [FieldInt2]=2 WHERE [ActID]='E1070510027';
+UPDATE [enterprise_Act] SET [Capacity]=40, [FieldInt1]=14, [FieldInt2]=2 WHERE [ActID]='E1070510028';
+UPDATE [enterprise_Act] SET [Capacity]=40, [FieldInt1]=14, [FieldInt2]=2 WHERE [ActID]='E1070510029';
+*/
+
+
+Select * FROM enterprise_od WHERE OrderID LIKE 'M%';
+Select * FROM enterprise_odt WHERE OrderID LIKE 'M%';
+Select * FROM enterprise_Act WHERE ActID LIKE 'E1070510%';
+
+INSERT INTO [enterprise_Act] 
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+VALUES
+('E1070510025',N'【花蓮】後山親子樂活~海洋總動員之旅 (第一梯次)','2018-11-24','2018-10-19',80,5000,5000,'wt2014',1,'','',24,4);
+
+INSERT INTO [enterprise_Act] 
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+VALUES
+('E1070510026',N'【花蓮】後山親子樂活~海洋總動員之旅 (第二梯次)','2018-12-01','2018-10-26',80,5000,5000,'wt2014',1,'','',24,4);
+
+
+INSERT INTO [enterprise_Act] 
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+VALUES
+('E1070510027',N'【台中】手做親子瘋麗寶之行-親子同行-大小孩6-18歲(第一梯次)','2018-12-08','2018-11-02',40,5000,5000,'wt2014',1,'','',12,2);
+
+INSERT INTO [enterprise_Act] 
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+VALUES
+('E1070510028',N'【台中】手做親子瘋麗寶之行-親子同行-大小孩6-18歲(第二梯次)','2018-12-22','2018-11-16',40,5000,5000,'wt2014',1,'','',12,2);
+
+INSERT INTO [enterprise_Act] 
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+VALUES
+('E1000000018',N'【新竹】心鮮森林樂野餐~春遊賞螢趣(適合全年齡)','2019-05-11','2019-04-26',80,3000,3000,'wt',1,'','',0,0);
+
+INSERT INTO [enterprise_Act] 
+([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+VALUES
+('E2000000036',N'【台南】海岸基地探訪~飛越愛無限之旅','2019-11-30','2019-10-25',40,5000,5000,'wt',1,'','',14,2);
+
+
+---- 一日報名網址 ----
+http://localhost:29895/enterprise/wt/order_one_day.aspx?aid=E1000000004
+http://enterprise.mcpgo.com/enterprise/wt/order_one_day.aspx?aid=E1000000004
+
+---- 一日候補網址 ----
+http://localhost:29895/enterprise/wt/waiting_one_day.aspx?aid=E1000000004
+http://enterprise.mcpgo.com/enterprise/wt/waiting_one_day.aspx?aid=E1000000004
+
+---- 二日報名網址 ----
+http://localhost:29895/enterprise/wt/order_two_days.aspx?aid=E2000000019
+http://enterprise.mcpgo.com/enterprise/wt/order_two_days.aspx?aid=E2000000019
+
+---- 二日候補網址 ----
+http://localhost:29895/enterprise/wt/waiting_two_days.aspx?aid=E2000000019
+http://enterprise.mcpgo.com/enterprise/wt/waiting_two_days.aspx?aid=E2000000019
+
+
+---- INITIALIZE DATA ----
+UPDATE [enterprise_Act]  SET [Capacity] = 80 WHERE ActID LIKE 'E1%';
+UPDATE [enterprise_Act]  SET [Capacity] = 40 WHERE ActID = 'E1000000005';
+UPDATE [enterprise_Act]  SET [Capacity] = 40 WHERE ActID = 'E1000000006';
+UPDATE [enterprise_Act]  SET [Capacity] = 40 WHERE ActID = 'E1000000012';
+UPDATE [enterprise_Act]  SET [Capacity] = 40 WHERE ActID = 'E1000000013';
+
+UPDATE [enterprise_Act]  SET [Capacity] = 80, [FieldInt1] = 26, [FieldInt2] = 6 WHERE ActID LIKE 'E2%';
+UPDATE [enterprise_Act]  SET [Capacity] = 40, [FieldInt1] = 13, [FieldInt2] = 3 WHERE ActID = 'E2000000019';
+UPDATE [enterprise_Act]  SET [Capacity] = 40, [FieldInt1] = 13, [FieldInt2] = 3 WHERE ActID = 'E2000000022';
+UPDATE [enterprise_Act]  SET [Capacity] = 40, [FieldInt1] = 13, [FieldInt2] = 3 WHERE ActID = 'E2000000023';
+UPDATE [enterprise_Act]  SET [Capacity] = 40, [FieldInt1] = 13, [FieldInt2] = 3 WHERE ActID = 'E2000000024';
+UPDATE [enterprise_Act]  SET [Capacity] = 40, [FieldInt1] = 13, [FieldInt2] = 3 WHERE ActID = 'E2000000025';
+UPDATE [enterprise_Act]  SET [Capacity] = 40, [FieldInt1] = 13, [FieldInt2] = 3 WHERE ActID = 'E2000000027';
+UPDATE [enterprise_Act]  SET [Capacity] = 40, [FieldInt1] = 13, [FieldInt2] = 3 WHERE ActID = 'E2000000035';
+UPDATE [enterprise_Act]  SET [Capacity] = 40, [FieldInt1] = 13, [FieldInt2] = 3 WHERE ActID = 'E2000000038';
+UPDATE [enterprise_Act]  SET [Capacity] = 16, [FieldInt1] = 8, [FieldInt2] = 0 WHERE ActID = 'E2000000036';
+
+Select * FROM enterprise_Act ;
+
+
+--TRUNCATE TABLE [enterprise_Od];
+--TRUNCATE TABLE [enterprise_Odt];
+--TRUNCATE TABLE [enterprise_tempOd];
+--TRUNCATE TABLE [enterprise_tempOdt];
+
+--TRUNCATE TABLE [enterprise_wt_employee];
+
+SELECT * FROM enterprise_Od;
+SELECT * FROM enterprise_Odt;
+SELECT * FROM enterprise_tempOd;
+SELECT * FROM enterprise_tempOdT;
+
+/************************** 緊急查詢 **************************/
+
+-- 目前此活動狀態
+SELECT * FROM [enterprise_Act] WHERE ActID='E1000000004';
+
+-- 目前此活動已報名總人數
+SELECT COUNT(*) FROM [enterprise_Odt] WHERE ActID = 'E1000000004';
+
+-- 更新一日遊人數
+UPDATE [enterprise_Act]  SET [Capacity] = 40 WHERE ActID = 'E1000000004';
+
+-- 更新二日遊人數與房數
+UPDATE [enterprise_Act]  SET [Capacity] = 40, [FieldInt1] = 13, [FieldInt2] = 3 WHERE ActID = 'E2000000035';
+
+
+UPDATE [enterprise_Act]  SET [Capacity] = 26 WHERE ActID = 'E1000000004';
+UPDATE [enterprise_Act]  SET [Capacity] = 24, [FieldInt1] = 10, [FieldInt2] = 2 WHERE ActID = 'E2000000019';
+Select * FROM enterprise_Act where ActID in ('E1000000004','E2000000019');
+
+/**************************  DAILY USE QUERY **************************/
+UPDATE [enterprise_Act]  SET 
+[Name] = N'【苗栗】春遊桐樂會_漫遊山城行(適合全年齡)',
+[StartDay] = '2019-05-04 00:00:00',
+[RegExpDay]= '2019-04-19 00:00:00',
+[Capacity] = 80,
+[Price] = 3000,
+[Price2]= 3000
+WHERE ActID = 'E1000000004';
+
+UPDATE [enterprise_Act]  SET [Capacity] = 0 WHERE ActID = 'E1000000004';
+
+UPDATE [enterprise_Act]  SET [FieldInt2] = 1 WHERE ActID = 'E2000000019';
+
+SELECT * FROM enterprise_act;
+
+SELECT * FROM enterprise_Od;
+SELECT * FROM enterprise_Odt;
+
+/**************************  TESTING QUERY IN WINDOW 1 **************************/
+SELECT * FROM enterprise_Act WHERE ActID='E2000000019';
+
+SELECT 
+s.ActName, m.OrderID, m.Tel2 AS [Room], m.Name AS [OName], s.EmpID, s.Name, s.DOB, s.Price, s.Comment
+FROM enterprise_Od AS m 
+INNER JOIN 
+enterprise_Odt AS s
+ON m.OrderID = s.OrderID
+WHERE s.ActID = 'E2000000019';
+
+-- E1000000004
+
+/**************************  TESTING QUERY IN WINDOW 2 **************************/
+SELECT 
+s.ActName, m.OrderID, m.Tel2 AS [Room], m.Name AS [OName], s.EmpID, s.Name, s.DOB, s.Price, s.Comment
+FROM enterprise_tempOd AS m 
+INNER JOIN 
+enterprise_tempOdt AS s
+ON m.OrderID = s.OrderID
+WHERE s.ActID = 'E2000000019';
+
+-- E1000000004
+
+
+
+--SELECT 
+--s.ActName, m.OrderID, m.Tel2 AS [Room], m.Name AS [OName], s.EmpID, s.Name, s.DOB, s.Price, s.Comment
+--FROM enterprise_Od AS m 
+--INNER JOIN 
+--enterprise_Odt AS s
+--ON m.OrderID = s.OrderID
+--WHERE s.ActID = 'E2000000019';
+
+--select * from enterprise_Act where [StartDay] = '2019-04-13'; 
+--select top 10 * from enterprise_Od where OrderID='M1080305003'; 
+--select top 10 * from enterprise_Odt where OrderID='M1080305003'; 
+;WITH NTE AS (
+SELECT 
+--OD.[Name] AS [MainName],
+--	OD.[Cell1] AS [MainCell],
+--	OD.[Tel1] AS [MainTel],
+--	OD.[Email] AS [MainEmail],
+--	OD.[TotalPrice],
+--	OD.[Comment],
+--DT.[OrderID],
+--	DT.[ActID],
+--	DT.[ActName],
+--	DT.[Name],
+--	DT.[SID],
+--	DT.[EmpID],
+--	CONVERT(varchar(12), DT.[DOB], 111) AS [DOB],
+--	DT.[Sex],
+--	DT.[Cell],
+--	DT.[Email],
+--	DT.[Price],
+--	DT.[Comment] AS [Cmt],
+--	DT.[IsVeg]
+OD.[OrderID], OD.[Name],OD.[Tel1],OD.[Tel2],OD.[Cell1],OD.[cell2],OD.[Fax],OD.[Address],OD.[Email],OD.[TotalPrice],OD.[Comment],OD.[Source],OD.[Company],OD.[CreateDay],OD.[IsPaid]
+FROM [enterprise_Act] AS ACT
+INNER JOIN 
+[enterprise_Odt] AS DT 
+ON
+ACT.[ActID] = DT.[ActID] 
+INNER JOIN
+[enterprise_Od] AS OD
+ON 
+DT.[OrderID] = OD.[OrderID]
+WHERE 
+ACT.[StartDay] = '2019-04-13'
+),
+CTE AS (
+  SELECT DISTINCT [OrderID],[Name],[Tel1],[Tel2],[Cell1],[cell2],[Fax],[Address], [Email],[TotalPrice],[Comment],[Source],[Company],[CreateDay],[IsPaid] FROM NTE 
+)
+SELECT * FROM CTE;
+
+
+;WITH CTE AS (
+		SELECT 
+		ACT.[Name] AS [ActName],
+		ACT.[StartDay],
+		OD.[OrderID], OD.[Name],OD.[Tel1],OD.[Tel2],OD.[Cell1],OD.[cell2],OD.[Fax],OD.[Address],
+		OD.[Email],OD.[TotalPrice],OD.[Comment],OD.[Source],OD.[Company],OD.[CreateDay],OD.[IsPaid]
+		FROM 
+		[enterprise_Od] AS OD 
+		INNER JOIN 
+		[enterprise_Odt] AS DT 
+		ON 
+		OD.OrderID = DT.OrderID 
+		INNER JOIN
+		[enterprise_Act] AS ACT
+		ON
+		DT.[ActID] = ACT.[ActID]
+		WHERE 
+	OD.OrderID LIKE @Filter + '%'
+	),
+	DS2 AS (
+		SELECT DISTINCT [OrderID],
+		[ActName],[StartDay],[Name],[Tel1],[Tel2],[Cell1],[cell2],[Fax],[Address],[Email],[TotalPrice],[Comment],[Source],[Company],[CreateDay],[IsPaid]
+		FROM CTE
+	),
+	PAGING AS (
+		SELECT ROW_NUMBER() OVER ( ORDER BY [OrderID] DESC) AS [RowNum],
+		[OrderID],[ActName],[StartDay],[Name],[Tel1],[Tel2],[Cell1],[cell2],[Fax],[Address],[Email],[TotalPrice],[Comment],[Source],[Company],[CreateDay],[IsPaid]
+		FROM DS2
+	)
+	SELECT [OrderID],[ActName],[StartDay],[Name],[Tel1],[Tel2],[Cell1],[cell2],[Fax],[Address],[Email],[TotalPrice],[Comment],[Source],[Company],[CreateDay],[IsPaid]
+	FROM PAGING
+	WHERE ([RowNum] > @PageSize * (@PageNumber - 1) ) AND ([RowNum] <= @PageSize * @PageNumber ) 
+	ORDER BY [RowNum]
+
+
+	UPDATE [enterprise_Act] SET [Capacity]=42,  [FieldInt1]=4, [FieldInt2]=8 WHERE [ActID]='E2000000038';
+	UPDATE [enterprise_Act] SET [Capacity]=40 WHERE [ActID]='E1000000003';
+    UPDATE [enterprise_Act] SET [Capacity]=40 WHERE [ActID]='E1000000004';
+
+	DELETE FROM [enterprise_Act] WHERE [ActID] = 'E1000000018'
+
+	INSERT INTO [enterprise_Act] ([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+	VALUES ('E2000000040',N'【屏東】與海龜共舞~潮間帶尋寶趣(青年旅遊)','2019-07-13','2019-06-08',80,5000,5000,'wt',1,'','',14,12);
+
+	INSERT INTO [enterprise_Act] ([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+	VALUES ('E2000000041',N'【屏東】與海龜共舞~潮間帶尋寶趣(青年旅遊)','2019-07-20','2019-06-15',80,5000,5000,'wt',1,'','',14,12);
+
+	INSERT INTO [enterprise_Act] ([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+	VALUES ('E2000000042',N'【屏東】與海龜共舞~潮間帶尋寶趣(青年旅遊)','2019-07-27','2019-06-22',80,5000,5000,'wt',1,'','',14,12);
+
+	INSERT INTO [enterprise_Act] ([ActID],[Name],[StartDay],[RegExpDay],[Capacity],[Price],[Price2],[Company],[Enable],[FieldStr1],[FieldStr2],[FieldInt1],[FieldInt2])
+	VALUES ('E1000000018',N'【新竹】心鮮森林樂野餐~春遊賞螢趣(適合全年齡)','2019-05-04','2019-04-19',120,2000,2000,'wt',1,'','',0,0);
+
+-- E2000000040 【屏東】與海龜共舞~潮間帶尋寶趣(青年旅遊) 7/13, 6/08, 80, 14, 12
+-- E2000000041 【屏東】與海龜共舞~潮間帶尋寶趣(青年旅遊)  7/20, 6/15, , 80, 14, 12
+-- E2000000042【屏東】與海龜共舞~潮間帶尋寶趣(青年旅遊) 7/27, 6/22, 80, 14, 12
+
+
+
+-- E2000000043【新竹】心鮮森林樂野餐 5/4 120

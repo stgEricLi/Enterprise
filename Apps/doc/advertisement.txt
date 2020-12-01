@@ -1,0 +1,29 @@
+﻿---------------------------------------------------------------------------------------------
+                                    [sky_Advertisement] 藍天廣告
+---------------------------------------------------------------------------------------------
+CREATE TABLE [sky_Advertisement](	
+	[SeqNo] [int] IDENTITY(1,1) NOT NULL,	--//流水號
+	[Title] [nvarchar](256) NOT NULL,   --// 廣告抬頭
+	[Content] [nvarchar](256) NOT NULL,   --// 廣告敘述
+	[Page] [nvarchar](20) NOT NULL,   --// 所屬頁面
+	[Url] [varchar](2830) NOT NULL,   --// 連結
+	[Type] [nvarchar](20) NOT NULL, --// 形式（消息或輪撥圖）
+	[ModifiedDay] [datetime] NOT NULL,  --//創建日期
+ CONSTRAINT [PK_sky_Advertisement_SeqNo] PRIMARY KEY CLUSTERED 
+(
+	[SeqNo] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [sky_Advertisement] ADD  CONSTRAINT [DF_sky_Advertisement_ModifiedDay]  DEFAULT (getdate()) FOR [ModifiedDay]
+GO
+ALTER TABLE [sky_Advertisement] ADD  CONSTRAINT [DF_sky_Advertisement_Url]  DEFAULT ('http://www.mcpsky.org') FOR [Url]
+GO
+ALTER TABLE [sky_Advertisement] ADD  CONSTRAINT [DF_sky_Advertisement_Type]  DEFAULT ('news') FOR [Type]
+GO
+
+
+
+
+ 

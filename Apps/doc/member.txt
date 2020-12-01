@@ -1,0 +1,51 @@
+﻿
+---------------------------------------------------------------------------------------------
+                                [sys_Member_Profile] 會員資料(用於MCP各網站)
+--------------------------------------------------------------------------------------------
+ CREATE TABLE [sys_Member_Profile](	
+	[UserName] [nvarchar](256) NOT NULL,
+	[TrueName] [nvarchar](256) NULL,
+	[SID] [nvarchar](20)  NULL,
+	[DOB] [smalldatetime]  NULL,
+	[Sex] [nvarchar](1)  NULL,
+	[Tel1] [nvarchar](20)  NULL,
+	[Tel2] [nvarchar](20)  NULL,
+	[Cell1] [nvarchar](20)  NULL,
+	[Cell2] [nvarchar](20)  NULL,
+	[Fax] [nvarchar](20)  NULL,
+	[Adddress] [nvarchar](256)  NULL,
+	[PointA][int] NOT NULL,
+	[PointB][int] NOT NULL,
+	[PointC][int] NOT NULL,
+	[Comment] [nvarchar](256) NOT NULL,
+CONSTRAINT [PK_Member_Profile_UserNmae] PRIMARY KEY CLUSTERED 
+(
+	[UserName] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [sys_Member_Profile] ADD  CONSTRAINT [DF_sys_Member_Profile_TrueName]  DEFAULT ('') FOR [TrueName]
+GO
+ALTER TABLE [sys_Member_Profile] ADD  CONSTRAINT [DF_sys_Member_Profile_DOB]  DEFAULT (getdate()) FOR [DOB]
+GO
+ALTER TABLE [sys_Member_Profile] ADD  CONSTRAINT [DF_sys_Member_Profile_PointA]  DEFAULT (0) FOR [PointA]
+GO
+ALTER TABLE [sys_Member_Profile] ADD  CONSTRAINT [DF_sys_Member_Profile_PointB]  DEFAULT (0) FOR [PointB]
+GO
+ALTER TABLE [sys_Member_Profile] ADD  CONSTRAINT [DF_sys_Member_Profile_PointC]  DEFAULT (0) FOR [PointC]
+GO
+ALTER TABLE [sys_Member_Profile] ADD  CONSTRAINT [DF_sys_Member_Profile_Sex]  DEFAULT ('男') FOR [Sex]
+GO
+
+INSERT INTO [sys_Member_Profile] 
+([UserName],[TrueName],[SID],[Tel1],[Adddress],[Comment])
+VALUES
+('wt2014','文曄科技','31536041','02-8226-9088#8584','新北市中和區中正路738號14樓','31536041');
+
+INSERT INTO [sys_Member_Profile] 
+([UserName],[TrueName],[SID],[Tel1],[Adddress],[Comment])
+VALUES
+('wt123','文曄減重','31536041','02-8226-9088#8584','新北市中和區中正路738號14樓','82269088');
+
+

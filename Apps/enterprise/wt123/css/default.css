@@ -1,0 +1,77 @@
+﻿
+body {background:#E0F0FF; margin:0px; padding:0px; font-family: "微軟正黑體"; font-size:14px;}
+
+.container{ }
+
+#wrap {border:solid 1px #c0c0c0; margin:0px auto; padding:0px; width:1024px; }
+
+ /* Remove the navbar's default margin-bottom and rounded borders*/ 
+.navbar {margin-bottom: 0; border-radius: 0; }
+.navbar-inverse {background-color:#e6e600; border-color:#fff; font-size:1.1em;   border-radius:0!important; -moz-border-radius:0!important;}
+.navbar-inverse .navbar-brand {color: #fff;}    
+.navbar-inverse .navbar-brand:hover, .navbar-inverse .navbar-brand:focus {color: #FFFFFF;}
+.navbar-inverse .navbar-text {color: #e4007f;}
+.navbar-inverse .navbar-nav {float:none; margin:0 auto!important; display:table; table-layout:fixed;}
+.navbar-inverse .navbar-nav > li {margin-right:12px; }
+.navbar-inverse .navbar-nav > li > a {color: #675133;  font-weight:bold; }
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {color: #FF8F00;}
+.navbar-inverse .navbar-nav > li > .dropdown-menu { background-color:#FFFFFF;}
+.navbar-inverse .navbar-nav > li > .dropdown-menu > li > a { color: #e6e600;}
+.navbar-inverse .navbar-nav > li > .dropdown-menu > li > a:hover,
+.navbar-inverse .navbar-nav > li > .dropdown-menu > li > a:focus {color: #ffffff; background-color: #349DC8;}
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  color: #ffffff;
+  background-color: #77b300;
+}
+
+
+#myCarousel img{ height:200px; width:1024px;}
+
+.carousel-indicators, .carousel-indicators li {display:none; }
+
+.main{/*padding:12px 45px 12px 120px;*/}
+.sidenav {margin-top:56px;/*padding-top: 20px; padding-right: 10px; background-color: #fff; height: 100%;*/}
+.row.content {min-height:720px;margin-top:28px;}
+
+.well{background-color:#fff;}
+.loadtxt {color:blue; }
+
+#MorePanel{ min-height:500px;}
+#NewsLoading { display:none;}
+#EventLoading { display:none;}
+#AlbumLoading { display:none;}
+#MoreLoading { display:none;}
+
+.list-group-item{ font-size: 1.2em; background-color:#EDEDB7; border-color:#3DDBCD;}
+.list-group-item .label{ font-size: 0.9em;}
+
+.picadv{  padding:3px;}
+
+.badge{ font-size: 0.9em;}
+.goal{ color: #ff9900;}
+
+.subUl li{ list-style:none;}
+
+.table-responsive th, .table-responsive td { text-align:center; vertical-align:middle!important;}
+
+#popCnt img{ width:95%; margin:0 auto;}
+ /* Set black background color, white text and some padding */
+ .footer {background-color: #808C54; color: white; padding: 15px; text-align:center; }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 767px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height:auto;} 
+      .col-sm-4 {
+      text-align: center;
+      margin: 25px 0;
+    }
+
+    }
+
+
+.toLeft{ text-align:left!important; font-weight:bold;}
+.toRed{ color:red;}

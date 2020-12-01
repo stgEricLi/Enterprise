@@ -1,0 +1,19 @@
+﻿---------------------------------------------------------------------------------------------
+                                    [enterprise_Album] 活動相簿
+---------------------------------------------------------------------------------------------
+CREATE TABLE [enterprise_Album](	
+	[ID] [int] IDENTITY(1,1) NOT NULL,				--//流水號
+	[Title] [nvarchar](50) NOT NULL,				--相簿名稱
+	[AlbumDate] [smalldatetime] NOT NULL,			--起始日
+	[Company] [nvarchar](50) NOT NULL,				--企業名稱
+	[TargetLink] [nvarchar](Max) NULL,				--對外連結
+	[ImgUrl] [nvarchar](Max) NULL,					--封面圖片連結
+ CONSTRAINT [PK_enterprise_Album_ID] PRIMARY KEY CLUSTERED 
+(
+	[ID] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+
+ALTER TABLE [enterprise_Album] ADD  CONSTRAINT [DF_enterprise_Album_AlbumDate]  DEFAULT (getdate()) FOR [AlbumDate]
+GO

@@ -1,0 +1,31 @@
+﻿ ---------------------------------------------------------------------------------------------
+                                [tw_City] 台灣地址-城市
+---------------------------------------------------------------------------------------------
+CREATE TABLE [tw_City](
+	[SortNo] [int] NOT NULL,
+	[CityCode] [varchar](6) NOT NULL,
+	[CityName] [varchar](10) NOT NULL,
+CONSTRAINT [PK_tw_City_CityCode] PRIMARY KEY CLUSTERED 
+(
+	[CityCode] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+GO
+ALTER TABLE [tw_City] ADD  CONSTRAINT [DF_tw_City_SortNo]  DEFAULT ((0)) FOR [SortNo]
+GO
+
+---------------------------------------------------------------------------------------------
+                                [tw_County] 台灣地址-區
+---------------------------------------------------------------------------------------------
+CREATE TABLE [tw_County](
+	[CountyName] [nvarchar](10) NOT NULL,
+	[Zip] [int] NOT NULL,
+	[CityCode] [nvarchar](6) NOT NULL,
+CONSTRAINT [PK_tw_County_Zip] PRIMARY KEY CLUSTERED 
+(
+	[Zip] ASC
+)WITH (PAD_INDEX  = OFF, STATISTICS_NORECOMPUTE  = OFF, IGNORE_DUP_KEY = OFF, ALLOW_ROW_LOCKS  = ON, ALLOW_PAGE_LOCKS  = ON) ON [PRIMARY]
+) ON [PRIMARY]
+
+ 
+

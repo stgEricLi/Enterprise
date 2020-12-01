@@ -1,0 +1,249 @@
+body {
+  font-family: "微軟正黑體";
+  /* background-color: #e3e5e7b2 !important; */
+}
+.jumbotron {
+  /* color: #e6f2ff; */
+  background-color: #e6f2ff !important;
+}
+
+.head {
+  background-repeat: no-repeat;
+  /*  */
+  height: 220px;
+  margin: 3px auto 0;
+  position: relative;
+  background-position: center;
+  background-image: url("../../../img/basic/logo.jpg");
+  background-color: #e6f2ff;
+}
+
+@media only screen and (max-width: 600px) {
+  .head {
+    height: 56px;
+    background-size: 100% 100%;
+  }
+}
+/* .head {
+        background-image: url("../../../img/basic/logo.jpg");
+        background-repeat: no-repeat;
+        -webkit-background-size: cover;
+        -moz-background-size: cover;
+        -o-background-size: cover;
+        background-size: cover;
+        background-position: center;
+        height: 200px;
+      } */
+/* .head {
+        background-image: url("../../../img/basic/logo.jpg");
+        background-repeat: no-repeat;
+        background-size: contain;
+        background-position: center;
+      } */
+
+/*
+       .head {
+
+        background-image: url("../../../img/basic/logo.jpg");
+        height: 200px;
+        background-repeat: no-repeat;
+        background-position: center;
+        background-color: #e6f2ff !important;
+      }
+      @media only screen and (max-width: 600px) {
+        .head {
+
+          height: 56px;
+          background-image: url("../../../img/basic/logo_xsmall.png");
+          background-repeat: no-repeat;
+          background-position: center;
+          background-color: #e6f2ff !important;
+        }
+      } */
+
+p {
+  line-height: 1.8;
+  font-size: 18px;
+  font-weight: 900;
+}
+.introPic {
+  border-bottom: solid 4px #00c4ff;
+  padding-bottom: 5px;
+}
+
+.title {
+  border-radius: 28px;
+  background: #149be9;
+  padding-left: 22px;
+  padding-top: 10px;
+  width: 168px;
+  height: 48px;
+  font-size: 18px;
+  color: #ffffff;
+  margin-bottom: 24px;
+  font-weight: bold;
+}
+
+.linkcnt {
+  width: 10px;
+  height: 48px;
+  padding-top: 22px;
+}
+.linkLine {
+  border-style: solid;
+  border-width: 2px;
+  border-color: #149be9;
+}
+
+.lgdot {
+  color: #149be9;
+  padding-top: 5px;
+  margin-left: -1px;
+  font-size: 24px;
+}
+
+.smdot {
+  color: #149be9;
+  padding-top: 16px;
+  margin-left: 4px;
+  font-size: 12px;
+}
+
+.roomCmt {
+  color: #c5543b;
+  padding-top: 12px;
+  padding-left: 32px;
+  font-weight: 700;
+}
+
+.rmDetial {
+  font-weight: 600;
+}
+
+.card-body {
+  padding: 0px !important;
+}
+.card-title {
+  background: #f384bc;
+  text-align: center;
+  padding: 12px;
+  font-size: 18px;
+  font-weight: 700;
+}
+.card-title a {
+  color: #ffffff;
+  text-decoration: none;
+}
+
+.no-text {
+  border-bottom: solid 3px #149be9;
+  height: 5px;
+  /* margin-top: 3px;
+        height: 3px; */
+}
+.room-info {
+  padding: 24px;
+}
+.list-icon {
+  color: #bd1eff8a;
+  margin-right: 12px;
+}
+ul.equip li {
+  /* padding-left: 4px; */
+  padding-top: 12px;
+  font-weight: 800;
+}
+.desc {
+  width: 24%;
+}
+.recommend {
+  padding: 24px;
+}
+.recommend ul {
+  list-style: none;
+  padding: 0px;
+}
+.recommend ul li {
+  padding-top: 15px;
+  padding-left: 5px;
+  font-weight: 800;
+}
+.dayMk {
+  color: green;
+}
+table {
+  font-weight: 800;
+}
+
+table.table-bordered {
+  border: 1px solid #a5da43;
+  margin-top: 20px;
+}
+table.table-bordered > thead > tr > th {
+  border: 1px solid #a5da43;
+  background: #a5da43;
+  color: white;
+  text-align: center;
+}
+table.table-bordered > tbody > tr > td {
+  border: 1px solid #a5da43;
+  text-align: center;
+}
+.separator {
+  border-bottom: dotted 4px #a5da43;
+}
+
+.noneBg {
+  background: transparent;
+}
+
+.noneBorder {
+  border-color: transparent;
+}
+
+.pinkBg {
+  background: #f384bc;
+}
+.pinkColor {
+  color: #f384bc;
+}
+.pinkBorder {
+  border-color: #f384bc;
+}
+
+.orgBg {
+  background: #fa8c33;
+}
+.orgColor {
+  color: #fa8c33;
+}
+.orgBorder {
+  border-color: #fa8c33;
+}
+
+.blueBg {
+  background: #149be9;
+}
+.blueColor {
+  color: #149be9;
+}
+
+.greenBg {
+  background: #a5da43;
+}
+.greenBorder {
+  border-color: #a5da43;
+}
+.greenColor {
+  color: #a5da43;
+}
+.rcTitle {
+  color: #0b8f4a;
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.equipImg {
+  width: 28%;
+  margin: 26px;
+}

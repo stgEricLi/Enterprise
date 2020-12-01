@@ -1,0 +1,21 @@
+﻿body {padding:0px; margin:0px; background:#EAF6FD; font-family:微軟正黑體;}
+#wrap {width:1022px; margin:0px auto;}
+.table { margin-top: 4px; font-size: 13px; }
+.table th { text-align: center; }
+.table td { vertical-align: middle!important; text-align: center;}
+span.titl { display:inline-block; width:66px; margin-left:4px; margin-right:2px; font-weight:bold; }
+.input-zone { margin-top:12px; border-style:none!important; }
+.input-zone input, .input-zone select { display:inline-block!important; width:15%!important; margin-right:12px; }
+.glyphicon-remove { color:#CC0000; cursor:pointer;}
+.glyphicon-pencil {color:blue; cursor: pointer; }
+.glyphicon-floppy-disk { color: #669900; cursor: pointer; }
+.glyphicon-remove { color: #CC0000; cursor: pointer; }
+.glyphicon-plus { color: #669900; cursor: pointer; }
+.glyphicon-floppy-saved {color: #669900; cursor: pointer; font-size:16px; }
+.glyphicon-floppy-remove {color: #CC0000; cursor: pointer; font-size:16px;}
+.panel-pink {border:solid 1px #FFA3A3!important; }
+.panel-pink > .panel-heading { background-color:#FFA3A3!important; color:#fff; }
+.yes { color: #669900; }
+.no { color: #CC0000; }
+.cmt { color:#c0c0c0; font-size:13px; }
+.error, .wrong, falied { color:red; font-size:13px;}
