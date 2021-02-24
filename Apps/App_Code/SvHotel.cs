@@ -1062,8 +1062,8 @@ public class SvHotel : System.Web.Services.WebService
                 content = sb.ToString();
                 sb.Remove(0, sb.Length);
 
-                sb.AppendFormat("<p>親愛的同仁您好！您已經在 MCP海天青企業專區網站上預定<span style='font-weight:bold;color:blue;'>{0}</span>", actName);
-                sb.AppendFormat(", 一間 {0} 人房，入住日期為 {1} ，CHICK IN 時間為: {2} ", room, actDay, chickin);
+                sb.AppendFormat("<p>親愛的同仁您好！您已經在 MCP海天青企業專區網站上成功預訂<span style='font-weight:bold;color:blue;'>{0}</span>", actName);
+                sb.AppendFormat(", 一間 {0} 人房，入住日期為 {1} ，CHECK IN 時間為: {2} ", room, actDay, chickin);
                 sb.AppendFormat("您的編號為：<span style='font-weight:bold;color:red;'>{0}</span></P>", orderid);
                 if(total > 0)
                 {
@@ -1078,7 +1078,7 @@ public class SvHotel : System.Web.Services.WebService
                 }
                 sb.Append("<p style='margin-top:12px;'>");
                 sb.Append("文曄集團福委會福委及海天青旅行社感謝您的參加與支持！我們將會於活動出發前 3 天寄發行前通知單給予參加同仁，再煩請注意郵件信箱。");               
-                sb.Append("如有任何問題請洽海天青旅行社訂房負責人員：02-29527535#36周小姐 #38曹先生");
+                sb.Append("如有任何問題請洽海天青旅行社訂房負責人員：02-29527535#20 吳小姐 #36周小姐 #38曹先生");
                 sb.Append("</p>");
 
                 content = sb.ToString() + content;
@@ -1103,5 +1103,45 @@ public class SvHotel : System.Web.Services.WebService
             result = ex.Message.ToString();
         }
         return result;
+    }
+
+    public List<string> HotelInfo;
+    //https://docs.microsoft.com/en-us/dotnet/csharp/how-to/parse-strings-using-split
+    public void initHotelInfo()
+    {       
+        HotelInfo.Add("15:00 PM|12:00 AM|飯店點餐式用餐|飯店套餐");              
+    }
+
+    public string build_3days_form(string hotelName)
+    {
+        StringBuilder sb = new StringBuilder();
+        int idx = 0;
+
+        if (HotelInfo.Count <= 0)
+            initHotelInfo();
+
+        switch (hotelName)
+        {
+            case "A":
+                idx = 0;
+                break;
+            case "B":
+                idx = 1;
+                break;
+            case "C":
+                idx = 2;
+                break;
+
+        }
+
+        string[] str = HotelInfo[idx].Split('|');
+
+        foreach (var word in str)
+        {
+            //System.Console.WriteLine($"<{word}>");
+        }
+
+        return sb.ToString();
+
     }
 }
